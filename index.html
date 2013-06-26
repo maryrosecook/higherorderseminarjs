@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="helper.js"></script>
+    <script type="text/javascript">
+      helper.destroyImplementations();
+    </script>
+
+    <script src="code.js"></script>
+
+    <script type="text/javascript">
+      console.log("map tests");
+
+      var actual = [0, 1, 2, 3].map(function(x) {
+        return x * 2;
+      });
+      var expected = [0, 2, 4, 6];
+      console.log(actual, expected, helper.arrayEqual(expected, actual));
+
+      var actual = [].map(function(x) {});
+      var expected = [];
+      console.log(actual, expected, helper.arrayEqual(expected, actual));
+
+      console.log("\nreduce tests");
+
+      var actual = [0, 1, 2, 3].reduce(function(acc, x) {
+        return acc + x;
+      });
+      var expected = 6;
+      console.log(actual, expected, expected === actual);
+
+      var actual = [0, 1, 2, 3].reduce(function(acc, x) {
+        return acc + x;
+      }, 10); // note initial value
+      var expected = 16;
+      console.log(actual, expected, expected === actual);
+
+      try {
+        [].reduce(function() { });
+        console.log("actual: no exception", "expected: exception", false);
+      } catch (e) {
+        var actual = e.message;
+        var expected = "Reduce of empty array with no initial value";
+        console.log(actual, expected, actual === expected);
+      }
+    </script>
+  </head>
+</html>

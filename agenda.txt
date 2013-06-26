@@ -1,0 +1,11 @@
+* higher order function example - fn passing
+* higher order function example - fn return
+* map, reduce demo
+* prototype basics
+* show map, reduce, filter are natively implemented
+* do shim for map
+* do toy map that doesn't work
+* run map tests and show they fail
+* explain tests
+* pair up and implement fns
+* reimplement map as a reduce
