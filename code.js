@@ -24,7 +24,7 @@
     }
   })();
 
-  var chain = function() {
+  var compose = function() {
     return Array.prototype.slice.call(arguments).reduce(function(acc, x) {
       return function(input) {
         return x(acc(input));
@@ -32,5 +32,5 @@
     });
   };
 
-  console.log(chain(square, square, square, sum)([0, 1, 2, 3, 4]));
+  console.log(compose(square, square, square, sum)([0, 1, 2, 3, 4]));
 })(this);
