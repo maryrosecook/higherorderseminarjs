@@ -15,6 +15,28 @@
   }
   console.log(output);
 
+  /* === */
+
+  // a note on iterating: careful with closures!!
+  // pretend we are pushing functions into the array.
+  var output = [];
+  for (var i = 0; i < input.length; i++) {
+    output.push({ val : function() { return input[i] * 2 } });
+  }
+  console.log(output[0].val()); // expects 0, gets NaN!
+  console.log(output[4].val()); // expects 8, gets NaN!
+
+  // Array prototype methods to the rescue!
+
+  var output = input.map(function(i){ 
+    return { val : function() { return input[i] * 2 } };
+  });
+
+  console.log(output[0].val()); // got 0!
+  console.log(output[4].val()); // got 8!
+
+  /* === */
+
   // multiply each - map
   var output = input.map(function(x) {
     return x * 2;
