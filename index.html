@@ -23,13 +23,13 @@
 
       console.log("\nreduce tests");
 
-      var actual = [0, 1, 2, 3].reduce(function(acc, x) {
+      var actual = [1, 2, 3].reduce(function(acc, x) {
         return acc + x;
       });
       var expected = 6;
       console.log(actual, expected, expected === actual);
 
-      var actual = [0, 1, 2, 3].reduce(function(acc, x) {
+      var actual = [1, 2, 3].reduce(function(acc, x) {
         return acc + x;
       }, 10); // note initial value
       var expected = 16;
