@@ -24,6 +24,20 @@
     }
   })();
 
+  // compose
+
+  var square = function(input) {
+    return input.map(function(x) {
+      return x * x;
+    });
+  };
+
+  var sum = function(input) {
+    return input.reduce(function(acc, x) {
+      return acc + x;
+    });
+  };
+
   var compose = function() {
     return Array.prototype.slice.call(arguments).reduce(function(acc, x) {
       return function(input) {
