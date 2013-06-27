@@ -1,4 +1,4 @@
-# Higher order function in JavaScript seminar
+# Higher order functions in JavaScript seminar
 
 Load index.html in your browser.  Open your browser console to see the results of running the tests on map() and reduce().
 
