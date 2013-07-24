@@ -6,7 +6,7 @@
       Array.prototype.reduce = function(f, acc) {
         if (acc === undefined && this.length === 0)
           throw TypeError("Reduce of empty array with no initial value");
-        if (acc === undefined && this.length !== 0) return this.reduce(f, this[0]);
+        if (acc === undefined && this.length !== 0) return this.slice(1).reduce(f, this[0]);
         if (this.length === 0) return acc;
         return this.slice(1).reduce(f, f(acc, this[0]));
       };
